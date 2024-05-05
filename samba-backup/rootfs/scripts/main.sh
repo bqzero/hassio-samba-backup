@@ -26,7 +26,7 @@ function create-backup {
         for ad in ${addons}; do [[ ! $EXCLUDE_ADDONS =~ $ad ]] && args+=("-a" "$ad"); done
 
         # include all folders that are not listed to be excluded
-        folders=(homeassistant ssl share addons/local media)
+        folders=(homeassistant ssl share addons/local media config/esphome config/blueprints config/custom_components config/integrations config/www)
         for fol in "${folders[@]}"; do [[ ! $EXCLUDE_FOLDERS =~ $fol ]] && args+=("-f" "$fol"); done
     fi
 
